@@ -34,8 +34,6 @@ Represents the response format when refreshing the access token.
 
 An asynchronous function responsible for refreshing the access token by sending a POST request to the designated endpoint. It handles errors gracefully and returns the new access token if successful.
 
-**Example:**
-
 ```typescript
 const newAccessToken = await refreshAccessToken();
 if (newAccessToken) {
@@ -43,3 +41,16 @@ if (newAccessToken) {
 } else {
     console.log('Failed to refresh access token.');
 }
+```
+**Example:**
+
+```typescript
+const postData = { /* your data */ };
+
+const createResponse = await performCrudOperation('/api/resource', { method: 'POST' }, postData);
+const readResponse = await performCrudOperation('/api/resource', { method: 'GET' });
+const updateResponse = await performCrudOperation('/api/resource/1', { method: 'PUT' }, postData);
+const deleteResponse = await performCrudOperation('/api/resource/1', { method: 'DELETE' });
+
+```
+
